@@ -4,42 +4,57 @@
 	<meta charset="utf-8">
 	<title>ex00</title>
 	<style>
-		table {
-			color:rgb(27, 118, 116);
+		table, th, td {
 			border-style: solid;
 			border-collapse: collapse;
+			border-color: teal;
+		}
+		th {
+			border-bottom-width: 5px;
+			border-bottom-style: double;
 		}
 	</style>
 </head>
-<body style="background-color:khaki">
+<body style="background-color:rgb(215, 202, 88)">
 	<h1>My Career</h1>
 	
 	<table>
-		<th>during</th>
-		<th>education</th>
-		<tr>
-			<td>2008 - 2010</td>
-			<td>Daegu-go</td>
-		</tr>
-		<tr>
-			<td>2011 - 2017</td>
-			<td>Kyungpook</td>
-		</tr>
-		<tr>
-			<td>2020 - current</td>
-			<td style="background-color:#424242;">42SEOUL</td>
-		</tr>
+		<thead>
+			<tr>
+				<th>during</th>
+				<th>education</th>
+			</tr>
+		</thead>
+		<tfoot>
+			<tr>
+				<td>2008 - 2010</td>
+				<td>Daegu-go</td>
+			</tr>
+			<tr>
+				<td>2011 - 2017</td>
+				<td>Kyungpook</td>
+			</tr>
+			<tr>
+				<td>2020 -</td>
+				<td style="border:3px solid #424242;">42SEOUL</td>
+			</tr>
+		</tfoot>
+
 	</table>
 
 	<h2>skill?</h2>
 	<ul>
-		<ol>
-			<li>C</li>
-			<li>HTML</li>
-			<li>Ruby(maybe?)</li>
-		</ol>
-
+		<li>C</li>
+		<li>HTML</li>
+		<li>Ruby(maybe?)</li>
 	</ul>
+	<h2>what next?</h2>
+	<ol>
+		<li>day00</li>
+		<li>day01</li>
+		<li>day02</li>
+	</ol>
+
 
 </body>
 </html>
