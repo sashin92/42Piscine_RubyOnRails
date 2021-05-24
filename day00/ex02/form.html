@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>ex02</title>
+	<style>
+		table {
+			border-style: solid;
+			border-collapse: collapse;
+		}
+	</style>
+</head>
+<body>
+	<h1 style="border-bottom:1px solid">Form</h1>
+	<div>Firstname : <input type="text" id="firstname"></div>
+	<div>Name : <input type="text" id="name"></div>
+	<div>Age : <input type="number" id="age" min="1"></div>
+	<div>Phone : <input type="tel" id="phone"></div>
+	<div>Email : <input type="email" id="email"></div>
+	<div >Student at 42 ? : <input type="checkbox" id="student"></div>
+	<div>
+		Male <input type="radio" value="Male" id="gender_male">
+		Female <input type="radio" value="Female" id="gender_female">
+		Other <input type="radio" value="Other" id="gender_other">
+	</div>
+	<input type="submit" value="Run" onclick="displayFormContents();">
+	<script src="popup.js"></script>
+</body>
+</html>
