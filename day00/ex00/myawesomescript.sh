@@ -1,3 +1,3 @@
 #!/bin/sh
 
-curl $1 2>>/dev/null | grep "href" | cut -d "\"" -f2
+curl -l -s $1 | grep "href" | cut -d "\"" -f 2
