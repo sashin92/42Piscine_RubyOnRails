@@ -12,6 +12,10 @@ class Html
 
 		begin
 			raise "#{@page_name + ".html"} already exist!" if File.file?(@page_name + ".html")
+		rescue => err
+			puts "#{err.class}: #{err}"
+			puts "from #{err.backtrace[0]}"
+		else
 			file = File.new(@page_name + ".html", "w")
 			file.puts "<!DOCTYPE html>"
 			file.puts "<html>"
@@ -20,9 +24,6 @@ class Html
 			file.puts "</head>"
 			file.puts "<body>"
 			file.close
-		rescue => err
-			puts "#{err.class}: #{err}"
-			puts "from #{err.backtrace[0]}"
 		end
 	end
 
@@ -44,10 +45,11 @@ class Html
 		begin
 			raise "Body has already been closed in #{@page_name + ".html"}" if is_body_end == 1
 			raise "There is no body tag in #{@page_name + ".html"}" if is_body == 0
-			file.puts "  <p>#{string}</p>"
 		rescue => err
 			puts "#{err.class}: #{err}"
 			puts "from #{err.backtrace[0]}"
+		else
+			file.puts "  <p>#{string}</p>"
 		end
 		file.close
 	end
@@ -65,11 +67,18 @@ class Html
 		end
 		begin
 			raise "#{@page_name + ".html"} has already been closed" if is_end == 1
-			file.puts "</body>"
 		rescue => err
 			puts "#{err.class}: #{err}"
 			puts "from #{err.backtrace[0]}"
+		else
+			file.puts "</body>"
 		end
 		file.close
 	end
+end
+
+if $0 == __FILE__
+	a = Html.new("test")
+	10.times{|x| a.dump("titi_number#{x}")}
+	a.finish
 end
