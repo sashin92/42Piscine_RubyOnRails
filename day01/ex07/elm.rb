@@ -73,4 +73,6 @@ def elm()
 	make_html(all)
 end
 
-elm()
+if __FILE__ == $PROGRAM_NAME
+	elm()
+end

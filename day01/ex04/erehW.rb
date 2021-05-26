@@ -24,4 +24,6 @@ def erehw()
 	end
 end
 
-erehw()
+if __FILE__ == $PROGRAM_NAME
+	erehw()
+end

@@ -13,4 +13,6 @@ def my_var()
 	puts "       d contains: #{if d == nil then "nil" else d end} and is a type: #{d.class}"
 end
 
-my_var()
+if __FILE__ == $PROGRAM_NAME
+	my_var()
+end

@@ -13,4 +13,6 @@ def sort_ascending()
 	puts arr.sort
 end
 
-sort_ascending()
+if __FILE__ == $PROGRAM_NAME
+	sort_ascending()
+end

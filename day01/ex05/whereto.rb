@@ -36,4 +36,6 @@ def whereto()
 	end
 end
 
-whereto()
+if __FILE__ == $PROGRAM_NAME
+	whereto()
+end

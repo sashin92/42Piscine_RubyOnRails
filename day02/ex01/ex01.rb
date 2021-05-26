@@ -79,6 +79,8 @@ end
 
 if $0 == __FILE__
 	a = Html.new("test")
+	a = Html.new("test")
 	10.times{|x| a.dump("titi_number#{x}")}
+	a.finish
 	a.finish
 end

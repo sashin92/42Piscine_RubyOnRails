@@ -19,4 +19,6 @@ def coffee()
 		end
 end
 
-coffee()
+if __FILE__ == $PROGRAM_NAME
+	coffee()
+end

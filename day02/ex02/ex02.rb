@@ -162,6 +162,12 @@ end
 
 if $0 == __FILE__
 	a = Html.new("test")
+	a = Html.new("test")
+	a.dump("Lorem_ipsum")
 	a.dump("Lorem_ipsum")
 	a.finish
+	a.finish
+	a.dump("add_text1")
+	a.dump("add_text2")
+
 end

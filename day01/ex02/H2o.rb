@@ -22,4 +22,6 @@ def datas()
 
 end
 
-datas()
+if __FILE__ == $PROGRAM_NAME
+	datas()
+end
