@@ -3,20 +3,11 @@
 class Elem
 
   attr_reader :tag, :content, :tag_type, :opt
-  def initialize(tag, content = '', tag_type = 'double', opt = '')
+  def initialize(tag, content = [], tag_type = 'double', opt = {})
     @tag = tag
     @content = content
     @tag_type = tag_type
 	  @opt = opt
-    if @content == ''
-      @content = []
-    end
-    if @opt == ''
-      @opt = {}
-    end
-    if @content.is_a?(String)
-      @content = [@content]
-    end
   end
 
   def add_content(*object)
@@ -46,6 +37,8 @@ class Elem
     ret += ">"
     if @content.is_a?(Text)
       ret += @content.to_s
+    elsif @content.is_a?(String)
+      ret += @content.to_s
     else
       ret += "\n"
       @content.each do |obj|
@@ -72,14 +65,13 @@ end
 
 
 if $0 == __FILE__
-#   img = Elem.new('img', '', 'simple',{'src':'http://i.imgur.com/pfp3T.jpg'})
-#   puts img
   html = Elem.new(Text.new("html"))
   head = Elem.new("head")
   body = Elem.new("body")
   img = Elem.new('img', '', 'simple',{'src':'http://i.imgur.com/pfp3T.jpg'})
   title = Elem.new("title")
   head.add_content(title)
-  html.add_content([head, body, img])
+  body.add_content(img)
+  html.add_content([head, body])
   puts html
 end
