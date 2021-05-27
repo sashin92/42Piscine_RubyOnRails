@@ -11,7 +11,6 @@ def coffee()
 		['Jill' , 24]
 		]
 
-		# puts data.sort_by {|key, value| value}
 		data = data.sort_by {|key, value| key}
 		data = data.sort_by {|key, value| value}
 		data.each do |key, value|

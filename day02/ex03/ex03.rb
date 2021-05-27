@@ -2,20 +2,32 @@
 
 class Elem
 
-  attr_reader :tag, :contents, :tag_type, :opt
-  def initialize(tag, contents = '', tag_type = '', opt = '')
+  attr_reader :tag, :content, :tag_type, :opt
+  def initialize(tag, content = '', tag_type = 'double', opt = '')
     @tag = tag
-    @contents = contents
+    @content = content
     @tag_type = tag_type
 	  @opt = opt
-    if @contents == ''
-      @contents = []
+    if @content == ''
+      @content = []
+    end
+    if @opt == ''
+      @opt = {}
+    end
+    if @content.is_a?(String)
+      @content = [@content]
     end
   end
 
-  def add_content(object)
-    object.each do |x|
-     @contents << object
+  def add_content(*object)
+    object.each do |obj|
+      if obj.is_a?(Array)
+        obj.each do |obj_element|
+          @content << obj_element
+        end
+      else
+        @content << obj
+      end
     end
   end
 
@@ -24,7 +36,7 @@ class Elem
     ret += "<#{@tag}"
     if @opt != ''
       @opt.each do |key, value|
-        ret += " #{key}=#{value}"
+        ret += " #{key}=\'#{value}\'"
       end
     end
     if @tag_type == "simple"
@@ -32,11 +44,11 @@ class Elem
       return ret
     end
     ret += ">"
-    if @contents.is_a?(Text)
+    if @content.is_a?(Text)
       ret += @content.to_s
     else
       ret += "\n"
-      @contents.each do |obj|
+      @content.each do |obj|
         ret += obj.to_s
         ret += "\n"
       end
@@ -60,9 +72,14 @@ end
 
 
 if $0 == __FILE__
-  a = Elem.new("ha")
-  b = Elem.new("hi")
-  # a.add_content(b)
-  puts a
-  # html = Elen.new('head') # <head></head>
+#   img = Elem.new('img', '', 'simple',{'src':'http://i.imgur.com/pfp3T.jpg'})
+#   puts img
+  html = Elem.new(Text.new("html"))
+  head = Elem.new("head")
+  body = Elem.new("body")
+  img = Elem.new('img', '', 'simple',{'src':'http://i.imgur.com/pfp3T.jpg'})
+  title = Elem.new("title")
+  head.add_content(title)
+  html.add_content([head, body, img])
+  puts html
 end

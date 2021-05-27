@@ -18,11 +18,11 @@ def make_html(all)
 	html_file.puts "<!DOCTYPE html>"
 	html_file.puts "<html>"
 	html_file.puts "<head>"
-	html_file.puts "\t<meta charset=\"utf-8\">"
-	html_file.puts "\t<title>ex07</title>"
+	html_file.puts "  <meta charset=\"utf-8\">"
+	html_file.puts "  <title>ex07</title>"
 	html_file.puts "</head>"
 	html_file.puts "<body>"
-	html_file.puts "\t<table>"
+	html_file.puts "  <table>"
 	j = 0
 	all.each_with_index do |value, i|
 		if i % 2 == 0
@@ -30,32 +30,32 @@ def make_html(all)
 			hash = all[i + 1]
 			j = j % 18
 			if hash["position"] == 0
-				html_file.puts "\t\t<tr>"
+				html_file.puts "    <tr>"
 			end
 			if hash["position"] != j
 				j.upto(hash["position"] - 1) do
-					html_file.puts "\t\t\t<td></td>"
+					html_file.puts "      <td></td>"
 				end
 				j = hash["position"]
 			end
-			html_file.puts "\t\t\t<td style=\"border: 1px solid black; padding:10px\">"
-			html_file.puts "\t\t\t\t<h4>#{name}</h4>"
-			html_file.puts "\t\t\t\t\t<ul>"
-			html_file.puts "\t\t\t\t\t\t<li>No #{hash["number"]}</li>"
-			html_file.puts "\t\t\t\t\t\t<li>#{hash["small"]}</li>"
-			html_file.puts "\t\t\t\t\t\t<li>#{hash["molar"]}</li>"
-			html_file.puts "\t\t\t\t\t\t<li>#{hash["electron"]} electron</li>"
-			html_file.puts "\t\t\t\t\t</ul>"
-			html_file.puts "\t\t\t</td>"
+			html_file.puts "      <td style=\"border: 1px solid black; padding:10px\">"
+			html_file.puts "        <h4>#{name}</h4>"
+			html_file.puts "          <ul>"
+			html_file.puts "            <li>No #{hash["number"]}</li>"
+			html_file.puts "            <li>#{hash["small"]}</li>"
+			html_file.puts "            <li>#{hash["molar"]}</li>"
+			html_file.puts "            <li>#{hash["electron"]} electron</li>"
+			html_file.puts "          </ul>"
+			html_file.puts "      </td>"
 			if hash["position"] == 17
-				html_file.puts "\t\t</tr>"
+				html_file.puts "    </tr>"
 			end
 			j = j + 1
 		end
 	end
-	 html_file.puts "\t\t\t</td>"
-	 html_file.puts "\t\t</tr>"
-	 html_file.puts "\t</table>"
+	 html_file.puts "      </td>"
+	 html_file.puts "    </tr>"
+	 html_file.puts "  </table>"
 	 html_file.puts "</body>"
 	 html_file.puts "</html>"
 end

@@ -1,6 +1,6 @@
 require_relative 'ex03.rb'
 require 'test/unit'
-require 'colorize'
+# require 'colorize'
 
 class MainTest < Test::Unit::TestCase
   def test_self

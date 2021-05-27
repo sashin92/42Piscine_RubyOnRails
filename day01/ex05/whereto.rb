@@ -14,7 +14,10 @@ def whereto()
 		"NJ" => "Trenton",
 		"CO" => "Denver"
 		}
-
+	
+	if ARGV.length != 1
+		return
+	end
 	arr = ARGV[0].split(",")
 	arr.each do |arg|
 		if arg == ""
