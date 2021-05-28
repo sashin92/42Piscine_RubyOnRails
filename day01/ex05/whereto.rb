@@ -25,7 +25,7 @@ def whereto()
 		end
 	end
 	arr = arr.map do |val|
-		val.strip.capitalize
+		val.split.each{|i| i.capitalize!}.join(' ')
 	end
 	arr.each do |val| 
 		if states.key(capitals_cities.key(val)) != nil

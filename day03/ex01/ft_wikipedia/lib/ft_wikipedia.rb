@@ -1,4 +1,4 @@
-#! /usr/bin/env ruby
+#! /usr/bin/env ruby -w
 
 require 'nokogiri'
 require 'open-uri'
@@ -34,10 +34,16 @@ class Ft_wikipedia
     
     @count += 1
     if keyword == "Philosophy"
+      puts @count
       return @count
     end
-    doc = Nokogiri::HTML(URI.open(link))
-    doc.search('div p a').each do |x|
+    begin
+      doc = Nokogiri::HTML(URI.open(link))
+    rescue
+      puts "There are no page :#{link}"
+      return
+    end
+    doc.search('div.mw-parser-output p a', 'div.mw-parser-output ul a').each do |x|
       if x.to_s.include?("/wiki/")
         @first = x.to_s
         break
@@ -45,14 +51,14 @@ class Ft_wikipedia
     end
     begin
       if @first == ""
-        raise "Dead end page reached"
+        raise StandardError, "Dead end page reached"
       end
     rescue => err
       puts err
       return
     end
     @first.to_s.split("\"").each do |x|
-      if x.include?("wiki") 
+      if x.include?("/wiki/") 
         parse = x
         after = parse.to_s.split("/")[2]
         search(after)
@@ -63,4 +69,5 @@ class Ft_wikipedia
 end
 
 a = Ft_wikipedia.new
-a.search("discourse")
+
+a.search("kiss")

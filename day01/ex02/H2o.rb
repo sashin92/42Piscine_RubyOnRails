@@ -18,7 +18,8 @@ def datas()
 			['Carlos' , 26],
 			['Carter' , 54],
 			['Casey' , 2]]
-		data.each {|key, value| puts "#{value} : #{key}"}
+	hash = data.to_h
+	hash.each {|key, value| puts "#{value} : #{key}"}
 
 end
 

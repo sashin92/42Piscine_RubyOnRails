@@ -16,7 +16,7 @@ def make_html(all)
 
 	html_file = File.new("periodic_table.html", "w")
 	html_file.puts "<!DOCTYPE html>"
-	html_file.puts "<html>"
+	html_file.puts "<html lang='en'>"
 	html_file.puts "<head>"
 	html_file.puts "  <meta charset=\"utf-8\">"
 	html_file.puts "  <title>ex07</title>"
@@ -53,8 +53,6 @@ def make_html(all)
 			j = j + 1
 		end
 	end
-	 html_file.puts "      </td>"
-	 html_file.puts "    </tr>"
 	 html_file.puts "  </table>"
 	 html_file.puts "</body>"
 	 html_file.puts "</html>"
