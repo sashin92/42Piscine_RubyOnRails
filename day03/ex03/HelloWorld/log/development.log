@@ -112,3 +112,14 @@ Processing by HelloWorldController#index as HTML
 Completed 200 OK in 40ms (Views: 30.1ms | ActiveRecord: 0.0ms | Allocations: 10297)
 
 
+Started GET "/" for ::1 at 2021-05-29 17:35:43 +0900
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HelloWorldController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering hello_world/index.html.erb within layouts/application
+  Rendered hello_world/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 360)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 6973)
+Completed 200 OK in 21ms (Views: 14.2ms | ActiveRecord: 0.0ms | Allocations: 10653)
+
+

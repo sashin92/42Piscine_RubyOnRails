@@ -1,0 +1,121 @@
+// Place all the styles related to the Cheat_Sheet controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+* {
+	font-size: 20px;
+	margin:10px;
+	content-visibility:inherit;
+}
+
+.container {
+	float: right;
+	background-color: lavender;
+}
+.container:before,
+.container:after {
+	clear: both;
+}
+table {
+	border-style: solid;
+	border-collapse: collapse;
+	
+}
+th {
+	text-align: left;
+}
+
+tr {
+	border-style: solid;
+	border-width: 1px;
+}
+tr:nth-child(odd) { background-color: rgb(210, 207, 207);}
+
+code {
+	color: #f3360b;
+	background-color: rgb(196, 196, 196);
+	
+}
+
+body {
+	line-height: 1.5;
+	background-color: white;
+	font-family: "Helvetica Neue", Helvetica, Arial, serif;
+	font-weight: 400;
+	color: #666;
+	margin-top: 60px;
+}
+
+h1 {
+	font-family: "Architects Daughter", "Helvetica Neue", Helvetica, Arial, serif;
+	font-size: 2.8em;
+	letter-spacing: -1px;
+	color: #474747;
+}
+h1:before, h2:before, h3:before, h4:before, h5:before, h6:before {
+	color: #f3360b;
+	padding-right: 0.3em;
+}
+h1:before {
+	content: "/";
+	margin-left: 1em;
+}
+h2 {
+	font-family: "Architects Daughter", "Helvetica Neue", Helvetica, Arial, serif;
+	font-size: 40px;
+	font-weight: bold;
+	margin-bottom: 8px;
+	color: #474747;
+}
+h2:before {
+	content: "//";
+	margin-left: 1.5em;
+}
+h3:before {
+	font-family: "Architects Daughter", "Helvetica Neue", Helvetica, Arial, serif;
+	font-size: 18px;
+	font-weight: bold;
+	margin-top: 24px;
+	margin-bottom: 8px;
+	color: #474747;
+}
+h3:before {
+	content: "///";
+	margin-left: 2em;
+}
+h4:before {
+	font-family: "Architects Daughter", "Helvetica Neue", Helvetica, Arial, serif;
+	font-size: 15px;
+	font-weight: bold;
+	color: #474747;
+}
+h4:before {
+	content: "////";
+	margin-left: 2.8em;
+}
+h5:before {
+	font-family: "Architects Daughter", "Helvetica Neue", Helvetica, Arial, serif;
+	font-size: 14px;
+	color: #474747;
+}
+h5:before {
+	content: "/////";
+	margin-left: 3.2em;
+}
+h6:before {
+	font-family: "Architects Daughter", "Helvetica Neue", Helvetica, Arial, serif;
+	font-size: 0.8em;
+	color: #474747;
+}
+h6:before {
+	content: "//////";
+	margin-left: 3.7em;
+}
+footer{
+	float:left;
+	list-style: none;
+	padding: 30px 0;
+	border-top: 1px solid #e5e5e5;
+	background-color: #f5f5f5;
+	
+}
