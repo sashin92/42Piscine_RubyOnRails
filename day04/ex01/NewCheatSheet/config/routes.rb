@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   
-  root 'cheat_sheet#index'
-  get 'index' => 'cheat_sheet#index'
+  root 'cheat_sheet#convension'
   get 'convension' => 'cheat_sheet#convension'
   get 'ruby' => 'cheat_sheet#ruby'
   get 'ruby_concepts' => 'cheat_sheet#ruby_concepts'
