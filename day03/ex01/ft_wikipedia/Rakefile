@@ -1,8 +1,6 @@
 require "rake/testtask"
 
-Rake::TestTask.new do |t|
-  t.libs << 'test'
-  t.test_files = FileList["test/ft_wikipedia_test.rb"]
+Rake::TestTask.new(name=:default) do |t|
+  t.test_files = FileList['test/*_test.rb']
+  t.verbose = true
 end
-
-task :default => :test

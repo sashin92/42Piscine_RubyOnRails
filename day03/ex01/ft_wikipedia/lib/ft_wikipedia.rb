@@ -27,7 +27,7 @@ class Ft_wikipedia
         end
       rescue => err
         puts err
-        return
+        return err.message
       end
     end
     @arr << keyword
@@ -41,7 +41,7 @@ class Ft_wikipedia
       doc = Nokogiri::HTML(URI.open(link))
     rescue
       puts "There are no page :#{link}"
-      return
+      return "There are no page :#{link}"
     end
     doc.search('div.mw-parser-output p a', 'div.mw-parser-output ul a').each do |x|
       if x.to_s.include?("/wiki/")
@@ -55,19 +55,15 @@ class Ft_wikipedia
       end
     rescue => err
       puts err
-      return
+      return err.message
     end
     @first.to_s.split("\"").each do |x|
       if x.include?("/wiki/") 
         parse = x
         after = parse.to_s.split("/")[2]
-        search(after)
-        return
+        ret = search(after)
+        return ret
       end
     end
   end
 end
-
-a = Ft_wikipedia.new
-
-a.search("kiss")
