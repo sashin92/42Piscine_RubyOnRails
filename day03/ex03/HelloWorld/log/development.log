@@ -1,0 +1,114 @@
+Started GET "/" for ::1 at 2021-05-29 15:54:21 +0900
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HelloWorldController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering hello_world/index.html.erb within layouts/application
+  Rendered hello_world/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 468)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/sashin/Desktop/ruby-on-rails/day03/ex03/HelloWorld/public/packs
+[Webpacker] Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-methods since the "loose" mode option was set to "true" for @babel/plugin-proposal-class-properties.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-methods", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-methods since the "loose" mode option was set to "true" for @babel/plugin-proposal-class-properties.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-methods", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-methods since the "loose" mode option was set to "true" for @babel/plugin-proposal-class-properties.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-methods", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-methods since the "loose" mode option was set to "true" for @babel/plugin-proposal-class-properties.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-methods", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-methods since the "loose" mode option was set to "true" for @babel/plugin-proposal-class-properties.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-methods", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-methods since the "loose" mode option was set to "true" for @babel/plugin-proposal-class-properties.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-methods", { "loose": true }]
+to the "plugins" section of your Babel config.
+
+[Webpacker] Hash: e332c6419728fac579d5
+Version: webpack 4.46.0
+Time: 1185ms
+Built at: 05/29/2021 3:54:24 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-f826770d917d8a37c1d8.js    125 KiB  application  [emitted] [immutable]  application
+js/application-f826770d917d8a37c1d8.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-f826770d917d8a37c1d8.js js/application-f826770d917d8a37c1d8.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 492 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 2628.5ms | Allocations: 17632)
+Completed 200 OK in 2641ms (Views: 2633.0ms | ActiveRecord: 0.0ms | Allocations: 22235)
+
+
+Started GET "/" for ::1 at 2021-05-29 15:54:24 +0900
+Processing by HelloWorldController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering hello_world/index.html.erb within layouts/application
+  Rendered hello_world/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 6791)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.0ms | Allocations: 7274)
+
+
+Started GET "/" for ::1 at 2021-05-29 15:54:34 +0900
+Processing by HelloWorldController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering hello_world/index.html.erb within layouts/application
+  Rendered hello_world/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 45)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 3623)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms | Allocations: 4204)
+
+
+Started GET "/" for ::1 at 2021-05-29 15:54:43 +0900
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HelloWorldController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering hello_world/index.html.erb within layouts/application
+  Rendered hello_world/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 360)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 6635)
+Completed 200 OK in 18ms (Views: 12.0ms | ActiveRecord: 0.0ms | Allocations: 10313)
+
+
+Started GET "/" for ::1 at 2021-05-29 15:54:51 +0900
+Processing by HelloWorldController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering hello_world/index.html.erb within layouts/application
+  Rendered hello_world/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 45)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 3623)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.0ms | Allocations: 4177)
+
+
+Started GET "/" for ::1 at 2021-05-29 15:54:52 +0900
+Processing by HelloWorldController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering hello_world/index.html.erb within layouts/application
+  Rendered hello_world/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 40)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 3488)
+Completed 200 OK in 5ms (Views: 5.0ms | ActiveRecord: 0.0ms | Allocations: 3938)
+
+
+Started GET "/" for ::1 at 2021-05-29 16:30:37 +0900
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HelloWorldController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering hello_world/index.html.erb within layouts/application
+  Rendered hello_world/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 359)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.3ms | Allocations: 6618)
+Completed 200 OK in 40ms (Views: 30.1ms | ActiveRecord: 0.0ms | Allocations: 10297)
+
+
