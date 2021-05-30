@@ -1,5 +1,5 @@
 {
-  "name": "cheat-sheet",
+  "name": "new-cheat-sheet",
   "private": true,
   "dependencies": {
     "@rails/actioncable": "^6.0.0",

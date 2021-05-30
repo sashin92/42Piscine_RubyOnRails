@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= @title %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet" type="text/css">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <div class="container">
+  <nav>
+    <div class="navbar navbar-fixed-top navbar-default"><div class="navbar-header"><a href="./#" class="navbar-brand cheat-sheet-brand">Rails Beginner Cheat Sheet</a></div>
+
+      <ul class="nav navbar-nav">
+        <li><a href="console">Console</a></li>
+        <li class="dropdown">
+          <a href="ruby" class="dropdown-toggle"><b class="caret"></b> Ruby</a>
+          <ul class="dropdown-menu">
+            <li><a href="ruby-concepts">General Concepts</a></li>
+            <li><a href="ruby-numbers">Numbers</a></li>
+            <li><a href="ruby-strings">Strings</a></li>
+            <li><a href="ruby-arrays">Arrays</a></li>
+            <li><a href="ruby-hashes">Hashes</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="rails" class="dropdown-toggle"><b class="caret"></b> Rails</a>
+          <ul class="dropdown-menu">
+            <li><a href="rails-folder-structure">Folder Structure</a></li>
+            <li><a href="rails-commands">Commands</a></li>
+            <li><a href="rails-erb">ERB: Embedded Ruby</a></li>
+          </ul>
+        </li>
+        <li><a href="rails-editor">Editor Tips</a></li>
+        <li><a href="help">Help</a></li>
+        <li><a href="quick_search">Let`s Go Quick Search!</a></li>
+      </ul>
+    </div>
+  </nav>
+  </div>
+  <div id="content-wrapper">
+    <div class="container ">
+      <section id="main-content">
+        <%= yield %>
+      </section>
+      </div>
+    </div>
+  </body>
+</html>

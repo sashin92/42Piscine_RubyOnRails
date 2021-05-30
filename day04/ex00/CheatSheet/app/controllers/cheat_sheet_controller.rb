@@ -1,4 +1,5 @@
+# This is for CheatSheet app's controller. you can make methods in this.
 class CheatSheetController < ApplicationController
-  def index
+  def cheat_sheet
   end
 end
