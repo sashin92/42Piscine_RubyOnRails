@@ -1,0 +1,23 @@
+<p class="list_uptext">Hit-Point : <%= $player["hit_count"] %></p>
+<% if !$player["my_moviemon"].empty?%>
+  <div class="list_image">
+    <% $selected = 0  if ($player["my_moviemon"].size < $selected or $selected < 0) or !$selected.is_a?(Integer) %>
+    <img src="<%= $player["my_moviemon"][$selected]["Poster"] %>" class="moviedex_image">
+  </div>
+  <div class="list_text">
+    <p class="highright">Title :</p>
+    <p><%= $player["my_moviemon"][$selected]["Title"] %></p>
+    <p class="highright">Year :</p>
+    <p><%= $player["my_moviemon"][$selected]["Year"] %></p>
+    <p class="highright">Genre :</p>
+    <p><%= $player["my_moviemon"][$selected]["Genre"] %></p>
+    <p class="highright">Director :</p>
+    <p><%= $player["my_moviemon"][$selected]["Director"] %></p>
+  </div>
+  <p class="list_undertext"> &emsp;[LEFT] [RIGHT] Search&emsp;&emsp;[START] Worldmap</p>
+<% elsif %>
+  <div class="list_text">
+  <p>CANNOT FIND MOVIEMON!</p>
+  </div>
+  <p class="list_undertext"> &emsp;[LEFT] [RIGHT] Search&emsp;&emsp;[START] Worldmap</p>
+<% end%>

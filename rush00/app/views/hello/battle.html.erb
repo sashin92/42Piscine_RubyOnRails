@@ -1,0 +1,43 @@
+<div class="battle_image">
+	<% if $player["hp"] == 0 %>
+		<p class="battle_end">YOU DEFEATED BY :</p>
+		<p><%= $game["monsters"][$player["opponent"]]["Title"] %></p>
+		<p>--------------------</p>
+		<p>Your Hit-Point : <%= $player["hit_count"] - 1 %> pt.</p>
+	<% elsif $game["monsters"][$player["opponent"]]["hp"] == 0 %>
+		<p class="battle_end">YOU CAUGHT UP :</p>
+		<p><%= $game["monsters"][$player["opponent"]]["Title"] %></p>
+		<p>--------------------</p>
+		<p>Your Hit-Point : <%= $player["hit_count"] + 1 %> pt.</p>
+	<% else %>
+	<img src=<%= $game["monsters"][$player["opponent"]]["Poster"] %> class="moviedex_image">
+	<% end %>
+</div>
+<div class="battle_who">
+  <p>Enemy :</p>
+  <p><%= $game["monsters"][$player["opponent"]]["Title"] %></p>
+  <p>imdbRating: <%= $game["monsters"][$player["opponent"]]["imdbRating"] %> / 10</p>
+</div>
+<div class="battle_status">
+  <% if $game["encounter"] == 0 %>
+    <p class="dual">&emsp;&emsp;&emsp;&emsp;Dual!</p>
+    <p>You Hitting <%= $player["hitting"] %>!</p>
+		<% if $game["monsters"][$player["opponent"]]["hp"] == 0 %>
+		<% else %>
+    	<p>You Damaged <%= ($game["monsters"][$player["opponent"]]["hitting"]) %>!</p>
+		<% end %>
+  <% end %>
+</div>
+<div class="battle_hp">
+  <p>Enemy <%= $game["monsters"][$player["opponent"]]["hp"] %> / <%= $game["monsters"][$player["opponent"]]["full_hp"] %></p>
+  <p>HP: <%= $player["hp"] %> / 100, Power :<%= $player["damage"] %></p>
+</div>
+<% if $player["hp"] == 0 || $game["monsters"][$player["opponent"]]["hp"] == 0 %>
+<div class="battle_undertext">
+	<p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Press [A] To Continue</p>
+</div>
+<% else %>
+<div class="battle_undertext">
+	<p>&emsp;[A] Fight&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;[B] Run</p>
+</div>
+<% end %>

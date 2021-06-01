@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MovieMon</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <div class="gameboy_wrap">
+      <%= yield %>
+    </div>
+    <div class="gameboy_layout">
+      <img src="/assets/gameboy_layout.png" usemap="#gb" width="800">
+      <map name="gb">
+        <area shape="rect" coords="80,590,140,640" onfocus="this.blur()" href="<%= $game["pages"] %>up">
+        <area shape="rect" coords="80,700,140,750" onfocus="this.blur()" href="<%= $game["pages"] %>down">
+        <area shape="rect" coords="30,640,80,700" onfocus="this.blur()" href="<%= $game["pages"] %>left">
+        <area shape="rect" coords="140,640,190,700" onfocus="this.blur()" href="<%= $game["pages"] %>right">
+        <area shape="circle" coords="710,640,50" onfocus="this.blur()" href="<%= $game["pages"] %>a">
+        <area shape="circle" coords="600,690,50" onfocus="this.blur()" href="<%= $game["pages"] %>b">
+        <area shape="circle" coords="450,690,60" onfocus="this.blur()" href="<%= $game["pages"] %>start">
+        <area shape="circle" coords="325,690,60" onfocus="this.blur()" href="<%= $game["pages"] %>select">
+        <area shape="circle" coords="80,240,20" onfocus="this.blur()" href="<%= $game["pages"] %>power">
+      </map>
+    </div>
+  </body>
+</html>

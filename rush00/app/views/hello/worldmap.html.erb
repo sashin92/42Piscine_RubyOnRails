@@ -1,0 +1,10 @@
+<div class="grid_wrap">
+  <% 100.times do |var| %>
+    <% if $player["position"] == var %>
+      <img src="assets/grid1.png" class="grid">
+    <% else %>
+      <img src="assets/grid2.png" class="grid">
+    <% end %>
+  <% end %>
+</div>
+<p class="grid_undertext">[SELECT] Saveslot &emsp; [START] Moviedex</p>

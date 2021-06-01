@@ -1,0 +1,11 @@
+<div class="save_text"><%= @msg%> Press [SELECT] to Return</div>
+<div class="save<%="_selected" if $selected == 0 %>">
+  <p class="highright">&emsp;save1 <%= "Exist" if $view["0"] %></p>
+</div>
+<div class="save<%="_selected" if $selected == 1 %>">
+  <p class="highright">&emsp;save2 <%= "Exist" if $view["1"] %></p>
+</div>
+<div class="save<%="_selected" if $selected == 2 %>">
+  <p class="highright">&emsp;save3 <%= "Exist" if $view["2"] %></p>
+</div>
+<p class="save_undertext">[UP] [DOWN]Toggle &emsp;&emsp;&emsp;[B]Load &emsp; [A]Save</p>
