@@ -31,6 +31,7 @@
 <div class="battle_hp">
   <p>Enemy <%= $game["monsters"][$player["opponent"]]["hp"] %> / <%= $game["monsters"][$player["opponent"]]["full_hp"] %></p>
   <p>HP: <%= $player["hp"] %> / 100, Power :<%= $player["damage"] %></p>
+  <p>MovieBall: <%= $player["movieball"] %></p>
 </div>
 <% if $player["hp"] == 0 || $game["monsters"][$player["opponent"]]["hp"] == 0 %>
 <div class="battle_undertext">

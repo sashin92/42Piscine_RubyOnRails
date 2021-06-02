@@ -8,8 +8,9 @@ class HelloController < ApplicationController
 			$player["prev_position"] = 0
 			$player["opponent"] = 0
 			$player["hit_count"] = 1
-			$player["damage"] = 9
+			$player["damage"] = 30
 			$player["my_moviemon"] = []
+			$player["movieball"] = 0
 			$view = {}
 
 			$selected = 0
@@ -68,6 +69,10 @@ class HelloController < ApplicationController
 		return JSON.parse(parse)
 	end
 
+	def get_movie
+		return $player["my_moviemon"]
+	end
+
 	def screentitle_right
 		render "screentitle"
 	end
@@ -95,7 +100,7 @@ class HelloController < ApplicationController
 		end
 		fp.close
 		$view = hash
-		
+
 		$selected = 0
 		$game["prev_page"] = "screentitle"
 		$game["pages"] = "saveslot"
@@ -119,7 +124,13 @@ class HelloController < ApplicationController
 
 	def worldmap_right
 		$player["prev_position"] = $player["position"]
-		$player["position"] = $player["position"] + 1 if $player["position"] % 10 != 9
+		if $player["position"] % 10 != 9
+			if rand(6) % 6  == 0
+				$player["movieball"] = $player["movieball"] + 1
+				@msg = "YOU GET A MOVIEBALL!!!!!"
+			end
+			$player["position"] = $player["position"] + 1
+		end
 		$game["monsters"].each_with_index do |var,index|
 			if var["position"] == $player["position"] && var["hp"] > 0 && $player["hp"] > 0
 				@hash = $game["monsters"][$player["opponent"]]
@@ -136,7 +147,13 @@ class HelloController < ApplicationController
 	end
 	def worldmap_left
 		$player["prev_position"] = $player["position"]
-		$player["position"] = $player["position"] - 1 if $player["position"] % 10 != 0
+		if $player["position"] % 10 != 0
+			if rand(6) % 6  == 0
+				$player["movieball"] = $player["movieball"] + 1
+				@msg = "YOU GET A MOVIEBALL!!!!!"
+			end
+			$player["position"] = $player["position"] - 1
+		end
 		$game["monsters"].each_with_index do |var,index|
 			if var["position"] == $player["position"] && var["hp"] > 0 && $player["hp"] > 0
 				@hash = $game["monsters"][$player["opponent"]]
@@ -153,7 +170,13 @@ class HelloController < ApplicationController
 	end
 	def worldmap_up
 		$player["prev_position"] = $player["position"]
-		$player["position"] = $player["position"] - 10 if $player["position"] / 10 != 0
+		if $player["position"] / 10 != 0
+			if rand(6) % 6  == 0
+				$player["movieball"] = $player["movieball"] + 1
+				@msg = "YOU GET A MOVIEBALL!!!!!"
+			end
+			$player["position"] = $player["position"] - 10
+		end
 		$game["monsters"].each_with_index do |var,index|
 			if var["position"] == $player["position"] && var["hp"] > 0 && $player["hp"] > 0
 				@hash = $game["monsters"][$player["opponent"]]
@@ -170,7 +193,13 @@ class HelloController < ApplicationController
 	end
 	def worldmap_down
 		$player["prev_position"] = $player["position"]
-		$player["position"] = $player["position"] + 10 if $player["position"] / 10 < 9
+		if $player["position"] / 10 < 9
+			if rand(6) % 6  == 0
+				$player["movieball"] = $player["movieball"] + 1
+				@msg = "YOU GET A MOVIEBALL!!!!!"
+			end
+			$player["position"] = $player["position"] + 10
+		end
 		$game["monsters"].each_with_index do |var,index|
 			if var["position"] == $player["position"] && var["hp"] > 0 && $player["hp"] > 0
 				@hash = $game["monsters"][$player["opponent"]]
@@ -281,8 +310,12 @@ class HelloController < ApplicationController
 		render "battle"
 	end
 	def battle_a
-
-		
+		if $player["movieball"] == 0
+			@msg = "YOU HAVE NO MOVIEBALL!!!!!!"
+			$game["pages"] = "worldmap"
+			render "worldmap"
+			return
+		end
 		if $player == nil
 			$game["pages"] = "screentitle"
 			render "screentitle"
@@ -318,6 +351,7 @@ class HelloController < ApplicationController
 		hash["hp"] = hash["hp"] - $player["hitting"]
 
 		if hash["hp"] <=0
+			$player["movieball"] -= 1
 			hash["hp"] = 0
 			render "battle"
 			return
@@ -343,6 +377,7 @@ class HelloController < ApplicationController
 			render "battle"
 			return
 		end
+		@msg =  "You cowrd!!!"
 		$game["encounter"] = 0
 		$player["hp"] = $player[:prev_hp]
 		$game["monsters"][$player["opponent"]]["hp"] = $game["monsters"][$player["opponent"]][:prev_hp]
@@ -360,7 +395,7 @@ class HelloController < ApplicationController
 	def moviedex_right
 		$selected = 0 if !$selected
 		$selected = $selected + 1
-		if ($selected > $player["my_moviemon"].size - 1)
+		if ($selected > self.get_movie.size - 1)
 			$selected = 0
 		end
 		render "moviedex"
@@ -369,7 +404,7 @@ class HelloController < ApplicationController
 		$selected = 0 if !$selected
 			$selected = $selected - 1
 			if ($selected < 0)
-				$selected = $player["my_moviemon"].size - 1
+				$selected = self.get_movie.size - 1
 			end
 			if ($selected < 0)
 				$selected = 0

@@ -1,4 +1,4 @@
-<p class="list_uptext">Hit-Point : <%= $player["hit_count"] %></p>
+<p class="list_uptext">Hit-Point : <%= $player["hit_count"] %> &emsp;&emsp; Movie-Ball : <%= $player["movieball"] %></p>
 <% if !$player["my_moviemon"].empty?%>
   <div class="list_image">
     <% $selected = 0  if ($player["my_moviemon"].size < $selected or $selected < 0) or !$selected.is_a?(Integer) %>
