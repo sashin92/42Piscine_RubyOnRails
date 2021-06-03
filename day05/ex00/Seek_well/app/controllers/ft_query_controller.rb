@@ -9,12 +9,14 @@ class FtQueryController < ApplicationController
   end
 
   def create_table
+    $db = SQLite3::Database.open("ft_sql.sqlite3")
     $db.execute("CREATE TABLE IF NOT EXISTS 'clock_watch'(ts_id INTEGER PRIMARY KEY, day INTEGER, month INTEGER, year INTEGER, hour INTEGER, min INTEGER, sec INTEGER, race INTEGER, name VARCHAR(50), lap INTEGER);")
     $db.execute("CREATE TABLE IF NOT EXISTS 'race'(r_id INTEGER PRIMARY KEY, start VARCHAR(50));")
     redirect_to controller: 'ft_query', action: 'index'
   end
 
   def drop_table
+    $db = SQLite3::Database.open("ft_sql.sqlite3")
     $db.execute("DROP TABLE IF EXISTS clock_watch;")
     $db.execute("DROP TABLE IF EXISTS race;")
     redirect_to controller: 'ft_query', action: 'index'
